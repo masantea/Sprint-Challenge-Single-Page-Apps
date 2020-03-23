@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import CharacterList from "./CharacterList";
 
-export default function SearchForm() {
- 
+export default function SearchForm(props ) {
   return (
     <section className="search-form">
-     // Add a search form here
+    <input placeholder="Search" type="text" value={props.value} onChange={props.onChange} />
     </section>
   );
 }

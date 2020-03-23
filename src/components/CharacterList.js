@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
-// import CardColumns from 'react-bootstrap/CardColumns'
-// import CardGroup from 'react-bootstrap/CardGroup'
+import SearchForm from "./SearchForm";
 
 import { Container, Row, CardColumns } from "reactstrap";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
+
+  const [search, setSearch] = React.useState("");
+
+  const handleChange = event => {
+    setSearch(event.target.value);
+  };
+
+  const result = characters.filter(character => {
+    const lowerCaseSearch = search.toLocaleLowerCase();
+    const lowerCaseName = character.name.toLocaleLowerCase();
+
+    return lowerCaseName.startsWith(lowerCaseSearch);
+    //return character.name.toLocaleLowerCase.startsWith(search.toLocaleLowerCase());
+  });
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -25,15 +38,14 @@ export default function CharacterList() {
   }, []);
 
   return (
-    // <section className="character-list">
-    // <CardGroup>
-      <Container>
-        <Row>
-          {characters.map((character, index) => {
-            return <CharacterCard character={character} key={index} />;
-          })}
-        </Row>
-      </Container>
+    <Container>
+      <SearchForm value={search} onChange={handleChange} />
 
+      <Row>
+        {result.map((character, index) => {
+          return <CharacterCard character={character} key={index} />;
+        })}
+      </Row>
+    </Container>
   );
 }

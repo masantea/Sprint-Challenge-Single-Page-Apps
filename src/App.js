@@ -8,12 +8,12 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
-      {/* // <main data-testid='app'> */}
+    //<div className="App">
+    <main data-testid="app">
       <Header />
       <nav>
         <div className="nav-links">
-          <Link className="some-link" to="/">
+          <Link to="/">
             Home
           </Link>
           <Link to="/character-list">Characters</Link>
@@ -22,19 +22,9 @@ export default function App() {
 
       <Switch>
         <Route exact path="/" component={WelcomePage} />
-        {/* <Route exact path="/">
-          <Home />
-        </Route> */}
-        {/* <Route exact path="/item-list" component={ItemsList} /> */}
-        <Route exact path="/character-list">
-          <CharacterList />
-        </Route>
-        {/* <Route path="/item-list/:dataID" component={Item} /> */}
-        {/* <Route path="/item-list/:itemID">
-          <Item />
-        </Route> */}
+        <Route exact path="/character-list" component={CharacterList} />
       </Switch>
-      {/* // </main> */}
-    </div>
+    </main>
+    //</div>
   );
 }

@@ -27,17 +27,6 @@ const CharacterCard = ({ character }) => {
         </CardBody>
       </Card>
     </Col>
-
-  
-      // <Card style={{height: '356px', width: '100%', display: 'block'}}>
-      //   <Card.Img variant="top" src={character.image} style={{height: '40%', width: '50%', display: 'block'}} />
-      //   <Card.Body>
-      //     <Card.Title>Name: {character.name}</Card.Title>
-      //   </Card.Body>
-      //     <Card.Text>Staus: {character.status}</Card.Text>
-      //     <Card.Text>Species: {character.species}</Card.Text>
-      //     <Card.Text>Gender: {character.gender}</Card.Text>
-      // </Card>
    
   );
 };

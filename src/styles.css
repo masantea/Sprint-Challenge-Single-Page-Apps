@@ -248,11 +248,6 @@ nav {
   opacity: 0;
 }
 
-input {
-  border: 0;
-  outline: none;
-}
-
 .baseline,
 input {
   background-color: #fff;
@@ -300,7 +295,4 @@ input {
   right: 0;
 }
 
-/* Crucial style rule */
-input:focus + .baseline:before {
-  right: 0;
-}
+
