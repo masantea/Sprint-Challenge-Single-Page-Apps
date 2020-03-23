@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CharacterList from "./CharacterList";
 
 export default function SearchForm() {
  
